@@ -5,6 +5,12 @@ on:
   # Run every day at 5AM UTC
   schedule:
     - cron: '0 5 * * *'
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'the branch to build the golang images from'
+        required: true
+        default: 'master'
 
 env:
   QUAY_ORG: projectquay
